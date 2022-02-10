@@ -1,0 +1,32 @@
+name: pipeline-env-cs-plugin
+description: Plugin to create a github pipeline.
+types:
+- env
+tags:
+- environment
+- typescript
+- pipeline
+inputs:
+- label: "Runners label (e.g. my-github-runner, my-other-github-runner):"
+  type: text
+  name: runners_label
+
+- label: "Custom IAM Permissions?"
+  type: bool
+  name: custom_iam
+
+- label: "Custom Policy (e.g. StacksPotContainerPolicy):"
+  type: text
+  name: custom_policy
+  condition:
+      variable: "custom_iam"
+      operator: "=="
+      value: true
+
+- label: ".NET version:"
+    type: text
+    name: dotnet_version
+    items:
+    - '3.1.x'
+    - '5.0.x'
+    - '6.0.x'
