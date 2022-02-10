@@ -24,9 +24,9 @@ inputs:
       value: true
 
 - label: ".NET version:"
-    type: text
-    name: dotnet_version
-    items:
+  type: text
+  name: dotnet_version
+  items:
     - '3.1.x'
     - '5.0.x'
     - '6.0.x'
